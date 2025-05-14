@@ -1,24 +1,19 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
-name: Run Intranet Smoke Tests
+name: Run Robot Framework Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  robot-tests:
+  test:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Check Internet Access
-      run: |
-        curl -I https://intranet-staging-cr.younetco.com/
     - name: Checkout code
       uses: actions/checkout@v4
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
@@ -29,11 +24,22 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Robot Framework tests
+    - name: Install Chromium browser
       run: |
-        robot -d results tests/
+        sudo apt-get update
+        sudo apt-get install -y chromium-browser
 
-    - name: Upload Robot logs and reports
+    - name: Run Robot Framework tests
+      env:
+        ROBOT_OPTIONS: >
+          --output results/output.xml
+          --report results/report.html
+          --log results/log.html
+      run: |
+        mkdir -p results
+        xvfb-run -a robot ${ROBOT_OPTIONS} tests/
+
+    - name: Upload test report
       uses: actions/upload-artifact@v4
       with:
         name: robot-results
