@@ -5,9 +5,9 @@ Library    OperatingSystem
 Library    String
 Library    Collections
 Library    RequestsLibrary
-Library    ../library/DateTimeLibrary.py
-Resource   ../page/Home_Page.resource
-Library    ../library/CustomExcelLibrary.py
+Library    ../libraries/DateTimeLibrary.py
+Resource   ../locators/Home_Page.resource
+Library    ../libraries/CustomExcelLibrary.py
 
 *** Variables ***
 ${DATA_DIR}    ${CURDIR}/../data

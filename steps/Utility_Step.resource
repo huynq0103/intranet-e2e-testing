@@ -5,10 +5,10 @@ Library    OperatingSystem
 Library    String
 Library    Collections
 Library    RequestsLibrary
-Resource    ../page/Login_Page.resource
-Resource    ../page/Home_Page.resource
+Resource    ../locators/Login_Page.resource
+Resource    ../locators/Home_Page.resource
 Resource    ../environment/Environment.resource
-Library    ../library/CustomExcelLibrary.py
+Library    ../libraries/CustomExcelLibrary.py
 
 *** Keywords ***
 Create driver

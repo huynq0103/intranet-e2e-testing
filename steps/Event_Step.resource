@@ -5,8 +5,8 @@ Library    OperatingSystem
 Library    String
 Library    Collections
 Library    RequestsLibrary
-Library    ../library/DateTimeLibrary.py
-Resource   ../page/Event_Page.resource
+Library    ../libraries/DateTimeLibrary.py
+Resource   ../locators/Event_Page.resource
 
 
 *** Keywords ***

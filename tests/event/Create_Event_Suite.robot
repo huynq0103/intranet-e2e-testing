@@ -1,8 +1,8 @@
 *** Settings ***
 Library    ../../library/DateTimeLibrary.py
 Library    SeleniumLibrary
-Resource   ../../step/Event_Step.resource
-Resource   ../../step/Utility_Step.resource
+Resource   ../../steps/Event_Step.resource
+Resource   ../../steps/Utility_Step.resource
 Test Setup    Create driver
 Test Teardown    Close Browser
 
