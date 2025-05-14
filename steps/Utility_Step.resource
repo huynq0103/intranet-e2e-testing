@@ -17,7 +17,7 @@ Create driver
         Call Method  ${options}  add_argument  --disable-infobars
         Call Method  ${options}  add_argument  --disable-extensions
         Call Method  ${options}  add_argument  --no-sandbox
-        # Call Method  ${options}  add_argument  --headless
+        Call Method  ${options}  add_argument  --headless
         Call Method  ${options}  add_argument  --disable-dev-shm-usage
     Create Webdriver    Chrome    options=${options}
 
