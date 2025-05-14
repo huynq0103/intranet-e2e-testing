@@ -16,7 +16,7 @@ jobs:
     steps:
     - name: Check Internet Access
       run: |
-        curl -I https://google.com/
+        curl -I https://intranet.younetco.com/
     - name: Checkout code
       uses: actions/checkout@v4
     - name: Set up Python
