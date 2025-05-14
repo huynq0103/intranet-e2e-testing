@@ -1,176 +1,457 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.6 on darwin)" generated="2025-05-14T15:31:05.408298" rpa="false" schemaversion="5">
-<suite id="s1" name="Login" source="/Users/huynq/testing/intranet-e2e-testing/tests/login">
-<suite id="s1-s1" name="Login Suite" source="/Users/huynq/testing/intranet-e2e-testing/tests/login/Login_Suite.robot">
-<test id="s1-s1-t1" name="Test login to intranet" line="9">
+<robot generator="Robot 7.1 (Python 3.12.6 on darwin)" generated="2025-05-14T15:58:26.393999" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/Users/huynq/testing/intranet-e2e-testing/tests">
+<suite id="s1-s1" name="Event" source="/Users/huynq/testing/intranet-e2e-testing/tests/event">
+<suite id="s1-s1-s1" name="Create Event Suite" source="/Users/huynq/testing/intranet-e2e-testing/tests/event/Create_Event_Suite.robot">
+<test id="s1-s1-s1-t1" name="Create New Event" line="9">
 <kw name="Create driver" owner="Utility_Step" type="SETUP">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-14T15:31:05.681710" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1052cf6b0&gt;</msg>
+<msg time="2025-05-14T15:58:26.603137" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x103515e20&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-14T15:31:05.681458" elapsed="0.000270"/>
+<status status="PASS" start="2025-05-14T15:58:26.602913" elapsed="0.000245"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-notifications</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-14T15:31:05.681804" elapsed="0.000075"/>
+<status status="PASS" start="2025-05-14T15:58:26.603267" elapsed="0.000072"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-infobars</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-14T15:31:05.681934" elapsed="0.000051"/>
+<status status="PASS" start="2025-05-14T15:58:26.603399" elapsed="0.000053"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-extensions</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-14T15:31:05.682033" elapsed="0.000047"/>
+<status status="PASS" start="2025-05-14T15:58:26.603504" elapsed="0.000046"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--no-sandbox</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-14T15:31:05.682125" elapsed="0.000044"/>
+<status status="PASS" start="2025-05-14T15:58:26.603601" elapsed="0.000046"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-dev-shm-usage</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-14T15:31:05.682212" elapsed="0.000041"/>
+<status status="PASS" start="2025-05-14T15:58:26.603715" elapsed="0.000083"/>
 </kw>
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-05-14T15:31:05.682394" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2025-05-14T15:58:26.604016" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>options=${options}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-05-14T15:31:05.682305" elapsed="1.810046"/>
+<status status="PASS" start="2025-05-14T15:58:26.603879" elapsed="0.751749"/>
 </kw>
-<status status="PASS" start="2025-05-14T15:31:05.680972" elapsed="1.811853"/>
+<status status="PASS" start="2025-05-14T15:58:26.602182" elapsed="0.753697"/>
 </kw>
 <kw name="Login to intranet with uid" owner="Utility_Step">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-05-14T15:31:07.495277" level="INFO">Opening url 'https://intranet-staging-cr.younetco.com/'</msg>
+<msg time="2025-05-14T15:58:27.358518" level="INFO">Opening url 'https://intranet-staging-cr.younetco.com/'</msg>
 <arg>${BASE_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-05-14T15:31:07.495159" elapsed="0.280682"/>
+<status status="PASS" start="2025-05-14T15:58:27.358119" elapsed="0.318907"/>
 </kw>
 <kw name="Join Path" owner="OperatingSystem">
-<msg time="2025-05-14T15:31:07.776261" level="INFO">${data_path} = /Users/huynq/testing/intranet-e2e-testing/data/data.xlsx</msg>
+<msg time="2025-05-14T15:58:27.677307" level="INFO">${data_path} = /Users/huynq/testing/intranet-e2e-testing/data/data.xlsx</msg>
 <var>${data_path}</var>
 <arg>/Users/huynq/testing/intranet-e2e-testing/steps</arg>
 <arg>../data/data.xlsx</arg>
 <doc>Joins the given path part(s) to the given base path.</doc>
-<status status="PASS" start="2025-05-14T15:31:07.775986" elapsed="0.000296"/>
+<status status="PASS" start="2025-05-14T15:58:27.677165" elapsed="0.000156"/>
 </kw>
 <kw name="Get Account" owner="CustomExcelLibrary">
-<msg time="2025-05-14T15:31:07.788039" level="INFO">${account} = ['uid_1', 'admin', 'tutna2', 'def@456']</msg>
+<msg time="2025-05-14T15:58:27.689572" level="INFO">${account} = ['uid_1', 'admin', 'tutna2', 'def@456']</msg>
 <var>${account}</var>
 <arg>${data_path}</arg>
 <arg>${uid}</arg>
-<status status="PASS" start="2025-05-14T15:31:07.776355" elapsed="0.011712"/>
+<status status="PASS" start="2025-05-14T15:58:27.677383" elapsed="0.012253"/>
 </kw>
 <kw name="Get All Rows Except First" owner="CustomExcelLibrary">
-<msg time="2025-05-14T15:31:07.795271" level="INFO">${accounts} = ['uid_2', 'hr', 'tutna4', 'def@456']</msg>
+<msg time="2025-05-14T15:58:27.697305" level="INFO">${accounts} = ['uid_2', 'hr', 'tutna4', 'def@456']</msg>
 <var>${accounts}</var>
 <arg>${data_path}</arg>
 <arg>hr</arg>
-<status status="PASS" start="2025-05-14T15:31:07.788185" elapsed="0.007117"/>
+<status status="PASS" start="2025-05-14T15:58:27.689897" elapsed="0.007447"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2025-05-14T15:31:07.797040" level="INFO">${username} = tutna2</msg>
+<msg time="2025-05-14T15:58:27.699331" level="INFO">${username} = tutna2</msg>
 <var>${username}</var>
 <arg>${account}</arg>
 <arg>2</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-05-14T15:31:07.796675" elapsed="0.000385"/>
+<status status="PASS" start="2025-05-14T15:58:27.698862" elapsed="0.000555"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2025-05-14T15:31:07.797248" level="INFO">${password} = def@456</msg>
+<msg time="2025-05-14T15:58:27.699944" level="INFO">${password} = def@456</msg>
 <var>${password}</var>
 <arg>${account}</arg>
 <arg>3</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-05-14T15:31:07.797181" elapsed="0.000078"/>
+<status status="PASS" start="2025-05-14T15:58:27.699824" elapsed="0.000135"/>
 </kw>
 <kw name="Login with username and password" owner="Utility_Step">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-14T15:31:07.797785" level="INFO">Typing text 'tutna2' into text field '//input[@name='USER_LOGIN']'.</msg>
+<msg time="2025-05-14T15:58:27.700548" level="INFO">Typing text 'tutna2' into text field '//input[@name='USER_LOGIN']'.</msg>
 <arg>${user_name_selector}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-14T15:31:07.797496" elapsed="0.089621"/>
+<status status="PASS" start="2025-05-14T15:58:27.700265" elapsed="0.089091"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-14T15:31:08.892430" level="INFO">Slept 1 second.</msg>
+<msg time="2025-05-14T15:58:28.790775" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-14T15:31:07.887252" elapsed="1.006342"/>
+<status status="PASS" start="2025-05-14T15:58:27.789763" elapsed="1.001176"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-14T15:31:08.895241" level="INFO">Typing text 'def@456' into text field '//input[@name='USER_PASSWORD']'.</msg>
+<msg time="2025-05-14T15:58:28.791750" level="INFO">Typing text 'def@456' into text field '//input[@name='USER_PASSWORD']'.</msg>
 <arg>${password_selector}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-14T15:31:08.894425" elapsed="0.074201"/>
+<status status="PASS" start="2025-05-14T15:58:28.791277" elapsed="0.044566"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-14T15:31:09.970682" level="INFO">Slept 1 second.</msg>
+<msg time="2025-05-14T15:58:29.836188" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-14T15:31:08.969019" elapsed="1.001860"/>
+<status status="PASS" start="2025-05-14T15:58:28.835961" elapsed="1.000462"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-14T15:31:09.971702" level="INFO">Clicking button '//input[@type='submit']'.</msg>
+<msg time="2025-05-14T15:58:29.837477" level="INFO">Clicking button '//input[@type='submit']'.</msg>
 <arg>${submit_button_selector}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-14T15:31:09.971289" elapsed="2.807129"/>
+<status status="PASS" start="2025-05-14T15:58:29.836928" elapsed="0.040475"/>
 </kw>
 <arg>${username}</arg>
 <arg>${password}</arg>
-<status status="PASS" start="2025-05-14T15:31:07.797346" elapsed="4.982268"/>
+<status status="PASS" start="2025-05-14T15:58:27.700075" elapsed="2.177403"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-14T15:31:14.781057" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-05-14T15:58:31.879575" level="INFO">Slept 2 seconds.</msg>
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-14T15:31:12.780153" elapsed="2.001181"/>
+<status status="PASS" start="2025-05-14T15:58:29.877565" elapsed="2.002077"/>
 </kw>
-<arg>uid_2</arg>
-<status status="PASS" start="2025-05-14T15:31:07.494569" elapsed="7.287045"/>
+<arg>uid_1</arg>
+<status status="PASS" start="2025-05-14T15:58:27.357266" elapsed="4.522438"/>
+</kw>
+<kw name="Navigate to create event page" owner="Utility_Step">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-14T15:58:31.880695" level="INFO">Clicking element '//span[contains(text(), 'Calendar')]'.</msg>
+<arg>${calendar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-14T15:58:31.880412" elapsed="1.530455"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-14T15:58:33.411187" level="INFO">Clicking element '//button[contains(text(), 'Create')]'.</msg>
+<arg>${create_event}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-14T15:58:33.411016" elapsed="0.114122"/>
+</kw>
+<status status="PASS" start="2025-05-14T15:58:31.879879" elapsed="1.645423"/>
+</kw>
+<kw name="Create Event" owner="Event_Step">
+<kw name="Get Next Time" owner="DateTimeLibrary">
+<msg time="2025-05-14T15:58:33.528154" level="INFO">${time_start} = 04:13 PM</msg>
+<var>${time_start}</var>
+<arg>15</arg>
+<status status="PASS" start="2025-05-14T15:58:33.527502" elapsed="0.001067"/>
+</kw>
+<kw name="Get Next Time" owner="DateTimeLibrary">
+<msg time="2025-05-14T15:58:33.529211" level="INFO">${time_finish} = 04:28 PM</msg>
+<var>${time_finish}</var>
+<arg>30</arg>
+<status status="PASS" start="2025-05-14T15:58:33.528847" elapsed="0.000384"/>
+</kw>
+<kw name="Get Next Day" owner="DateTimeLibrary">
+<msg time="2025-05-14T15:58:33.529418" level="INFO">${next_day} = 15/05/2025</msg>
+<var>${next_day}</var>
+<status status="PASS" start="2025-05-14T15:58:33.529332" elapsed="0.000100"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_start}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-14T15:58:33.529510" elapsed="1.433213"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-14T15:58:34.963255" level="INFO">Executing JavaScript:
+document.getElementsByClassName('calendar-field calendar-field-datetime')[0].value='15/05/2025'
+Without any arguments.</msg>
+<arg>document.getElementsByClassName('calendar-field calendar-field-datetime')[0].value='${next_day}'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-14T15:58:34.962916" elapsed="0.006416"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-14T15:58:34.969706" level="INFO">Executing JavaScript:
+document.getElementsByClassName('calendar-field calendar-field-datetime')[1].value='15/05/2025'
+Without any arguments.</msg>
+<arg>document.getElementsByClassName('calendar-field calendar-field-datetime')[1].value='${next_day}'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-14T15:58:34.969457" elapsed="0.002447"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-14T15:58:34.972164" level="INFO">Executing JavaScript:
+document.getElementsByClassName('calendar-field calendar-field-datetime-menu')[0].value='04:13 PM'
+Without any arguments.</msg>
+<arg>document.getElementsByClassName('calendar-field calendar-field-datetime-menu')[0].value='${time_start}'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-14T15:58:34.971984" elapsed="0.002432"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-14T15:58:34.974695" level="INFO">Executing JavaScript:
+document.getElementsByClassName('calendar-field calendar-field-datetime-menu')[1].value='04:28 PM'
+Without any arguments.</msg>
+<arg>document.getElementsByClassName('calendar-field calendar-field-datetime-menu')[1].value='${time_finish}'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-14T15:58:34.974506" elapsed="0.002336"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-14T15:58:37.978275" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-14T15:58:34.976919" elapsed="3.001512"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-14T15:58:37.979095" level="INFO">Clicking button '//button[contains(text(), 'Save')]'.</msg>
+<arg>${save_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-14T15:58:37.978734" elapsed="0.047284"/>
+</kw>
+<status status="PASS" start="2025-05-14T15:58:33.526595" elapsed="4.499499"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-14T15:31:14.782666" elapsed="0.122171"/>
+<status status="PASS" start="2025-05-14T15:58:38.026414" elapsed="0.142010"/>
 </kw>
+<doc>create new event</doc>
+<tag>intranet</tag>
+<status status="PASS" start="2025-05-14T15:58:26.601636" elapsed="11.566886"/>
+</test>
+<status status="PASS" start="2025-05-14T15:58:26.409527" elapsed="11.759404"/>
+</suite>
+<status status="PASS" start="2025-05-14T15:58:26.409136" elapsed="11.760108"/>
+</suite>
+<suite id="s1-s2" name="Information" source="/Users/huynq/testing/intranet-e2e-testing/tests/information">
+<suite id="s1-s2-s1" name="Get Info Suite" source="/Users/huynq/testing/intranet-e2e-testing/tests/information/Get_Info_Suite.robot">
+<test id="s1-s2-s1-t1" name="Get upcoming birthday" line="10">
+<kw name="Create driver" owner="Utility_Step" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-14T15:58:38.176558" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x103542e10&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-14T15:58:38.176392" elapsed="0.000181"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-14T15:58:38.176648" elapsed="0.000076"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-14T15:58:38.176790" elapsed="0.000056"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-14T15:58:38.176895" elapsed="0.000045"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-14T15:58:38.176987" elapsed="0.000211"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-14T15:58:38.177268" elapsed="0.000055"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-14T15:58:38.177540" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-14T15:58:38.177387" elapsed="0.740588"/>
+</kw>
+<status status="PASS" start="2025-05-14T15:58:38.176241" elapsed="0.741933"/>
+</kw>
+<kw name="Login to intranet with uid" owner="Utility_Step">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-14T15:58:38.919081" level="INFO">Opening url 'https://intranet-staging-cr.younetco.com/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-14T15:58:38.918993" elapsed="0.203962"/>
+</kw>
+<kw name="Join Path" owner="OperatingSystem">
+<msg time="2025-05-14T15:58:39.123233" level="INFO">${data_path} = /Users/huynq/testing/intranet-e2e-testing/data/data.xlsx</msg>
+<var>${data_path}</var>
+<arg>/Users/huynq/testing/intranet-e2e-testing/steps</arg>
+<arg>../data/data.xlsx</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<status status="PASS" start="2025-05-14T15:58:39.123102" elapsed="0.000148"/>
+</kw>
+<kw name="Get Account" owner="CustomExcelLibrary">
+<msg time="2025-05-14T15:58:39.134252" level="INFO">${account} = ['uid_1', 'admin', 'tutna2', 'def@456']</msg>
+<var>${account}</var>
+<arg>${data_path}</arg>
+<arg>${uid}</arg>
+<status status="PASS" start="2025-05-14T15:58:39.123314" elapsed="0.010964"/>
+</kw>
+<kw name="Get All Rows Except First" owner="CustomExcelLibrary">
+<msg time="2025-05-14T15:58:39.144921" level="INFO">${accounts} = ['uid_2', 'hr', 'tutna4', 'def@456']</msg>
+<var>${accounts}</var>
+<arg>${data_path}</arg>
+<arg>hr</arg>
+<status status="PASS" start="2025-05-14T15:58:39.134404" elapsed="0.010546"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-05-14T15:58:39.145270" level="INFO">${username} = tutna2</msg>
+<var>${username}</var>
+<arg>${account}</arg>
+<arg>2</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-05-14T15:58:39.145149" elapsed="0.000133"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-05-14T15:58:39.145402" level="INFO">${password} = def@456</msg>
+<var>${password}</var>
+<arg>${account}</arg>
+<arg>3</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-05-14T15:58:39.145342" elapsed="0.000070"/>
+</kw>
+<kw name="Login with username and password" owner="Utility_Step">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-14T15:58:39.145799" level="INFO">Typing text 'tutna2' into text field '//input[@name='USER_LOGIN']'.</msg>
+<arg>${user_name_selector}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-14T15:58:39.145657" elapsed="0.099303"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-14T15:58:40.246052" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-14T15:58:39.245084" elapsed="1.001130"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-14T15:58:40.246889" level="INFO">Typing text 'def@456' into text field '//input[@name='USER_PASSWORD']'.</msg>
+<arg>${password_selector}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-14T15:58:40.246520" elapsed="0.087539"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-14T15:58:41.334871" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-14T15:58:40.334214" elapsed="1.000825"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-14T15:58:41.335652" level="INFO">Clicking button '//input[@type='submit']'.</msg>
+<msg time="2025-05-14T16:00:58.806888" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10361b110&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/be9280e010798b2ecd9f1104b9b51391/screenshot</msg>
+<msg time="2025-05-14T16:00:58.808947" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10361a6f0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/be9280e010798b2ecd9f1104b9b51391/screenshot</msg>
+<msg time="2025-05-14T16:00:58.811458" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1036184d0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/be9280e010798b2ecd9f1104b9b51391/screenshot</msg>
+<msg time="2025-05-14T16:00:58.826930" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=57104): Max retries exceeded with url: /session/be9280e010798b2ecd9f1104b9b51391/screenshot (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10361a9c0&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</msg>
+<arg>${submit_button_selector}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2025-05-14T15:58:41.335335" elapsed="137.492348">Execution terminated by signal</status>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="FAIL" start="2025-05-14T15:58:39.145498" elapsed="139.682742">Execution terminated by signal</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-14T16:00:58.829715" elapsed="0.000659"/>
+</kw>
+<arg>uid_1</arg>
+<status status="FAIL" start="2025-05-14T15:58:38.918677" elapsed="139.911990">Execution terminated by signal</status>
+</kw>
+<kw name="Get birthday" owner="Home_Step">
+<status status="NOT RUN" start="2025-05-14T16:00:58.834435" elapsed="0.000129"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<msg time="2025-05-14T16:00:58.839427" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1035ea120&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/be9280e010798b2ecd9f1104b9b51391</msg>
+<msg time="2025-05-14T16:00:58.841513" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1035e92e0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/be9280e010798b2ecd9f1104b9b51391</msg>
+<msg time="2025-05-14T16:00:58.842924" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1035f8d40&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/be9280e010798b2ecd9f1104b9b51391</msg>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-14T16:00:58.835198" elapsed="0.008903"/>
+</kw>
+<doc>get birthday</doc>
+<tag>intranet</tag>
+<status status="FAIL" start="2025-05-14T15:58:38.175993" elapsed="140.668176">Execution terminated by signal</status>
+</test>
+<status status="FAIL" start="2025-05-14T15:58:38.170096" elapsed="140.674514"/>
+</suite>
+<status status="FAIL" start="2025-05-14T15:58:38.169387" elapsed="140.675584"/>
+</suite>
+<suite id="s1-s3" name="Login" source="/Users/huynq/testing/intranet-e2e-testing/tests/login">
+<suite id="s1-s3-s1" name="Login Suite" source="/Users/huynq/testing/intranet-e2e-testing/tests/login/Login_Suite.robot">
+<test id="s1-s3-s1-t1" name="Test login to intranet" line="9">
 <doc>login to intranet</doc>
 <tag>intranet</tag>
-<status status="PASS" start="2025-05-14T15:31:05.680498" elapsed="9.224433"/>
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-05-14T16:00:58.845423" elapsed="0.000148">Test execution stopped due to a fatal error.</status>
 </test>
-<status status="PASS" start="2025-05-14T15:31:05.425142" elapsed="9.480185"/>
+<status status="FAIL" start="2025-05-14T16:00:58.845306" elapsed="0.000383"/>
 </suite>
-<status status="PASS" start="2025-05-14T15:31:05.409020" elapsed="9.496610"/>
+<status status="FAIL" start="2025-05-14T16:00:58.845125" elapsed="0.000732"/>
+</suite>
+<status status="FAIL" start="2025-05-14T15:58:26.394575" elapsed="152.451697"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">intranet</stat>
+<stat pass="1" fail="1" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="1" fail="2" skip="0">intranet</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Login Suite">Login.Login Suite</stat>
+<stat pass="1" fail="2" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Event">Tests.Event</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Create Event Suite">Tests.Event.Create Event Suite</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2" name="Information">Tests.Information</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2-s1" name="Get Info Suite">Tests.Information.Get Info Suite</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s3" name="Login">Tests.Login</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s3-s1" name="Login Suite">Tests.Login.Login Suite</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-05-14T16:00:58.806888" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10361b110&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/be9280e010798b2ecd9f1104b9b51391/screenshot</msg>
+<msg time="2025-05-14T16:00:58.808947" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10361a6f0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/be9280e010798b2ecd9f1104b9b51391/screenshot</msg>
+<msg time="2025-05-14T16:00:58.811458" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1036184d0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/be9280e010798b2ecd9f1104b9b51391/screenshot</msg>
+<msg time="2025-05-14T16:00:58.826930" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: HTTPConnectionPool(host='localhost', port=57104): Max retries exceeded with url: /session/be9280e010798b2ecd9f1104b9b51391/screenshot (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10361a9c0&gt;: Failed to establish a new connection: [Errno 61] Connection refused'))</msg>
+<msg time="2025-05-14T16:00:58.839427" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1035ea120&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/be9280e010798b2ecd9f1104b9b51391</msg>
+<msg time="2025-05-14T16:00:58.841513" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1035e92e0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/be9280e010798b2ecd9f1104b9b51391</msg>
+<msg time="2025-05-14T16:00:58.842924" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x1035f8d40&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/be9280e010798b2ecd9f1104b9b51391</msg>
 </errors>
 </robot>

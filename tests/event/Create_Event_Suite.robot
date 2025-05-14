@@ -1,5 +1,4 @@
 *** Settings ***
-Library    ../../library/DateTimeLibrary.py
 Library    SeleniumLibrary
 Resource   ../../steps/Event_Step.resource
 Resource   ../../steps/Utility_Step.resource

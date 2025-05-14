@@ -1,5 +1,4 @@
 *** Settings ***
-Library    ../../library/DateTimeLibrary.py
 Library    SeleniumLibrary
 Resource   ../../steps/Home_Step.resource
 Resource   ../../locators/Home_Page.resource
