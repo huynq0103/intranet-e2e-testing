@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on darwin)" generated="2025-05-14T11:19:55.399019" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="/Users/huynq/robot_framework/automationtestscript/test/login">
+<suite id="s1-s1" name="Login Suite" source="/Users/huynq/robot_framework/automationtestscript/test/login/Login_Suite.robot">
+<test id="s1-s1-t1" name="Test login to intranet" line="9">
+<kw name="Create driver" owner="Utility_Step" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-14T11:19:55.637775" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1056bebd0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-14T11:19:55.637566" elapsed="0.000227"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-14T11:19:55.637869" elapsed="0.000062"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-14T11:19:55.637985" elapsed="0.000050"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-14T11:19:55.638086" elapsed="0.000047"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-14T11:19:55.638178" elapsed="0.000044"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-14T11:19:55.638267" elapsed="0.000046"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-14T11:19:55.638517" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-14T11:19:55.638368" elapsed="1.296053"/>
+</kw>
+<status status="PASS" start="2025-05-14T11:19:55.637103" elapsed="1.298756"/>
+</kw>
+<kw name="Login to intranet with uid" owner="Utility_Step">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-14T11:19:56.940918" level="INFO">Opening url 'https://intranet-staging-cr.younetco.com/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-14T11:19:56.940808" elapsed="0.217774"/>
+</kw>
+<kw name="Join Path" owner="OperatingSystem">
+<msg time="2025-05-14T11:19:57.158992" level="INFO">${data_path} = /Users/huynq/robot_framework/automationtestscript/data/data.xlsx</msg>
+<var>${data_path}</var>
+<arg>/Users/huynq/robot_framework/automationtestscript/step</arg>
+<arg>../data/data.xlsx</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<status status="PASS" start="2025-05-14T11:19:57.158714" elapsed="0.000296"/>
+</kw>
+<kw name="Get Account" owner="CustomExcelLibrary">
+<msg time="2025-05-14T11:19:57.179378" level="INFO">${account} = ['uid_1', 'admin', 'tutna2', 'def@456']</msg>
+<var>${account}</var>
+<arg>${data_path}</arg>
+<arg>${uid}</arg>
+<status status="PASS" start="2025-05-14T11:19:57.159078" elapsed="0.020337"/>
+</kw>
+<kw name="Get All Rows Except First" owner="CustomExcelLibrary">
+<msg time="2025-05-14T11:19:57.194380" level="INFO">${accounts} = ['uid_2', 'hr', 'tutna4', 'def@456']</msg>
+<var>${accounts}</var>
+<arg>${data_path}</arg>
+<arg>hr</arg>
+<status status="PASS" start="2025-05-14T11:19:57.179611" elapsed="0.014797"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-05-14T11:19:57.195884" level="INFO">${username} = tutna2</msg>
+<var>${username}</var>
+<arg>${account}</arg>
+<arg>2</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-05-14T11:19:57.194959" elapsed="0.001009"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2025-05-14T11:19:57.197106" level="INFO">${password} = def@456</msg>
+<var>${password}</var>
+<arg>${account}</arg>
+<arg>3</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-05-14T11:19:57.196610" elapsed="0.000516"/>
+</kw>
+<kw name="Login with username and password" owner="Utility_Step">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-14T11:19:57.198401" level="INFO">Typing text 'tutna2' into text field '//input[@name='USER_LOGIN']'.</msg>
+<arg>${user_name_selector}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-14T11:19:57.198031" elapsed="0.150235"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-14T11:19:58.349475" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-14T11:19:57.348561" elapsed="1.001063"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-14T11:19:58.350251" level="INFO">Typing text 'def@456' into text field '//input[@name='USER_PASSWORD']'.</msg>
+<arg>${password_selector}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-14T11:19:58.349915" elapsed="0.098329"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-14T11:19:59.448563" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-14T11:19:58.448372" elapsed="1.000338"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-14T11:19:59.449309" level="INFO">Clicking button '//input[@type='submit']'.</msg>
+<arg>${submit_button_selector}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-14T11:19:59.448998" elapsed="0.039348"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-14T11:19:57.197403" elapsed="2.291021"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-14T11:20:01.489903" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-14T11:19:59.488512" elapsed="2.001591"/>
+</kw>
+<arg>uid_2</arg>
+<status status="PASS" start="2025-05-14T11:19:56.939795" elapsed="4.550458"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-14T11:20:01.490821" elapsed="0.168671"/>
+</kw>
+<doc>login to intranet</doc>
+<tag>intranet</tag>
+<status status="PASS" start="2025-05-14T11:19:55.636710" elapsed="6.022883"/>
+</test>
+<status status="PASS" start="2025-05-14T11:19:55.417193" elapsed="6.242733"/>
+</suite>
+<status status="PASS" start="2025-05-14T11:19:55.399877" elapsed="6.260822"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">intranet</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Login Suite">Login.Login Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
