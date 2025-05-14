@@ -29,8 +29,7 @@ jobs:
 
     - name: Run Robot Framework tests
       run: |
-        mkdir -p results
-        robot --output results/output.xml --report results/report.html --log results/log.html tests/
+        robot -d results tests/
 
     - name: Upload Robot logs and reports
       uses: actions/upload-artifact@v4
