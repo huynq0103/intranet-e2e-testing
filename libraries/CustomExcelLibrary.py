@@ -328,16 +328,6 @@ class CustomExcelLibrary:
             return f"Error saving keywords to Excel: {str(e)}"
 
 
-    def get_account(self, excel_path, role):
-        book = openpyxl.load_workbook(excel_path)
-        sheet = book.active
-        role = self.check_role(role)
-        row = role + 1
-        row_data = []
-        for cell in sheet[row]:
-            row_data.append(cell.value)
-        return row_data
-
     @staticmethod
     def get_all_rows_except_first(excel_path, user):
         book = openpyxl.load_workbook(excel_path)
@@ -349,20 +339,11 @@ class CustomExcelLibrary:
         return all_rows[0]
 
     @staticmethod
-    def check_role(value):
-        switch_dict = {
-            "admin": 1,
-            "hr": 2,
-            "employee": 3
-        }
-        return switch_dict.get(value, 1)
-
-    @staticmethod
     def get_account_by_uid(excel_path, uid):
         book = openpyxl.load_workbook(excel_path)
         sheet = book.active
         row = str(uid).split("_", 2)
-        row = int(row[1])
+        row = int(row[1]) + 1
         row_data = []
         for cell in sheet[row]:
             row_data.append(cell.value)

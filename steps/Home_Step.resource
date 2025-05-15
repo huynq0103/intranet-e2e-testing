@@ -67,3 +67,66 @@ Export chart
     ${str_random}    Get Random String
     ${sheet_name}    Set Variable    ${today}_${str_random}
     Save Keywords To Existing Excel    ${CHART_PATH}    ${result}    ${sheet_name}    
+
+
+Send Message To User 
+    [Documentation]    Check user can create message on feed
+    [Arguments]    ${user_name}
+    Select Frame    ${iframe_locator}
+    ${str_random}    Get Random String
+    Set Suite Variable    ${message_on_feed}    ${str_random}
+    Input Text    ${text_locator}   ${str_random}
+    Unselect Frame
+    Select User From Dropdown    ${tag_user_locator}    ${user_name}
+    Click Element    ${send_button_locator}
+    Sleep    2s
+   
+Check Message Appear On Feed
+    [Arguments]    ${message_on_feed}
+    ${feed_post_text_locator}    Replace String    ${feed_post_text_locator}    {text}    ${message_on_feed}
+    Wait Until Element Is Visible    ${feed_post_text_locator}    10s
+
+Check Announcement Appear On Feed
+    [Arguments]    ${announcement_text}
+    ${announcement_receive_text_locator}    Replace String    ${announcement_receive_text_locator}    {text}    ${announcement_text}
+    Wait Until Element Is Visible    ${announcement_receive_text_locator}    10s
+
+Search post by keyword
+    [Arguments]    ${keyword}
+    Input Text    ${search_input_locator}    ${keyword}
+    Sleep    1s
+    Press Keys    ${search_input_locator}    ENTER
+    ${feed_post_text_locator}    Replace String    ${feed_post_text_locator}    {text}    ${keyword}
+    Wait Until Element Is Visible    ${feed_post_text_locator}    10s
+    
+Select User From Dropdown
+    [Arguments]    ${dropdown_locator}    ${user_name}    ${timeout}=10
+    [Documentation]    Selects a user from a dropdown list
+    ...    dropdown_locator: The locator of the dropdown element
+    ...    user_name: The name of the user to select
+    ...    timeout: Maximum time to wait for elements
+    Wait Until Element Is Visible    ${dropdown_locator}    ${timeout}
+    Click Element    ${dropdown_locator}
+    Sleep    1
+    ${user_option}    Set Variable    xpath://div[contains(@class, 'popup-window')]//div[contains(@class, 'popup-window-content')]//div[contains(text(), '${user_name}')]
+    Wait Until Element Is Visible    ${user_option}    ${timeout}
+    Click Element    ${user_option}
+    Sleep    1
+
+Select User From Dropdown With Search
+    [Arguments]    ${dropdown_locator}    ${search_input_locator}    ${user_name}    ${timeout}=10
+    [Documentation]    Selects a user from a dropdown list with search functionality
+    ...    dropdown_locator: The locator of the dropdown element
+    ...    search_input_locator: The locator of the search input field
+    ...    user_name: The name of the user to select
+    ...    timeout: Maximum time to wait for elements
+    Wait Until Element Is Visible    ${dropdown_locator}    ${timeout}
+    Click Element    ${dropdown_locator}
+    Sleep    1
+    Wait Until Element Is Visible    ${search_input_locator}    ${timeout}
+    Input Text    ${search_input_locator}    ${user_name}
+    Sleep    1
+    ${user_option}    Set Variable    xpath://div[contains(@class, 'popup-window')]//div[contains(@class, 'popup-window-content')]//div[contains(text(), '${user_name}')]
+    Wait Until Element Is Visible    ${user_option}    ${timeout}
+    Click Element    ${user_option}
+    Sleep    1    

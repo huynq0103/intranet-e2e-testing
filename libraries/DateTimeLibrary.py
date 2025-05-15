@@ -19,7 +19,7 @@ class DateTimeLibrary:
         return today.strftime("%d-%m-%Y")
 
     @staticmethod
-    def get_random_string(length=5):
+    def get_random_string(length=20):
         """
         Generate a random string of specified length using letters and digits.
 
