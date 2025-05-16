@@ -6,9 +6,9 @@ Library    String
 Library    Collections
 Library    RequestsLibrary
 Library    ../libraries/DateTimeLibrary.py
-Resource   ../locators/Home_Page.resource
+Resource   ../locators/Feed_Page.resource
 Library    ../libraries/CustomExcelLibrary.py
-
+Resource    Utility_Step.resource
 *** Variables ***
 ${DATA_DIR}    ${CURDIR}/../data
 ${EXCEL_PATH}    ${DATA_DIR}/news.xlsx
@@ -56,6 +56,42 @@ Get news
 #     [Arguments]    ${keyword}
 #     ${count}    Count Keyword    ${EXCEL_PATH}    ${keyword}
 
+Create announcement to all employees
+    Create driver
+    Login to intranet with uid    uid_1
+    Navigate to create announcement page
+    Send Message To User    All employees
+    Log out   
+
+Select action post
+    [Arguments]    ${action_post}
+    ${action_post_locator}    Replace String    ${action_post_locator}    {action_post}    ${action_post}
+    Wait Until Element Is Visible    ${action_post_locator}    10s
+    Click Element    ${action_post_locator}
+
+Edit post
+    ${str_random}    Get Random String
+    Set Suite Variable    ${message_on_feed}    ${str_random}
+    Wait Until Element Is Visible    ${action_post_menu_locator}    10s
+    Click Element    ${action_post_menu_locator}
+    Select action post    Edit
+    Input Text To Iframe    ${message_on_feed}
+    Sleep    1s
+    Click Element    ${send_button_locator}
+
+Comment on post
+    Wait Until Element Is Visible    ${comment_locator}    10s
+    Click Element    ${comment_locator}
+    ${str_random}    Get Random String
+    Input Text To Iframe    ${str_random}
+    Sleep    1s
+    Click Element    ${comment_button_locator}
+    Sleep    1s
+
+Like post
+    Wait Until Element Is Visible    ${like_locator}    10s
+    Click Element    ${like_locator}
+
 Count common keywords
     ${result}    Find Most Common Keywords       ${EXCEL_PATH}
     Log    ${result}
@@ -72,14 +108,19 @@ Export chart
 Send Message To User 
     [Documentation]    Check user can create message on feed
     [Arguments]    ${user_name}
-    Select Frame    ${iframe_locator}
     ${str_random}    Get Random String
     Set Suite Variable    ${message_on_feed}    ${str_random}
-    Input Text    ${text_locator}   ${str_random}
-    Unselect Frame
+    Input Text To Iframe    ${message_on_feed}
     Select User From Dropdown    ${tag_user_locator}    ${user_name}
     Click Element    ${send_button_locator}
     Sleep    2s
+
+Input Text To Iframe
+    [Arguments]    ${text}
+    Select Frame    ${iframe_locator}
+    Clear Element Text    ${text_locator}
+    Input Text    ${text_locator}    ${text}
+    Unselect Frame
    
 Check Message Appear On Feed
     [Arguments]    ${message_on_feed}
@@ -92,10 +133,13 @@ Check Announcement Appear On Feed
     Wait Until Element Is Visible    ${announcement_receive_text_locator}    10s
 
 Search post by keyword
-    [Arguments]    ${keyword}
+    [Arguments]    ${keyword}    ${type_sort}
     Input Text    ${search_input_locator}    ${keyword}
     Sleep    1s
-    Press Keys    ${search_input_locator}    ENTER
+    ${type_sort_locator}    Replace String    ${type_sort_locator}    {type_sort}    ${type_sort}
+    Wait Until Element Is Visible    ${sort_popup_locator}    10s
+    Click Element    ${type_sort_locator}
+    # Press Keys    ${search_input_locator}    ENTER
     ${feed_post_text_locator}    Replace String    ${feed_post_text_locator}    {text}    ${keyword}
     Wait Until Element Is Visible    ${feed_post_text_locator}    10s
     

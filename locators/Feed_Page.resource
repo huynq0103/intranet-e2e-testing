@@ -1,6 +1,7 @@
 *** Variables ***
 ${profile_locator}    //span[@id='user-name']
 ${logout_locator}    //a[@class='system-auth-form__item-link-all']
+${admin_logout_locator}    //a[@id='bx-panel-logout']
 ${calendar}    //span[contains(text(), 'Calendar')]
 ${create_event}    //button[contains(text(), 'Create')]
 ${sidebar_widget_birthdays}    //div[contains(@class, 'sidebar-widget-birthdays')]
@@ -17,5 +18,10 @@ ${announcement_locator}    //span[text()='Announcement']
 ${announcement_text_locator}    //div[@id='blog-post-form-LHE_blogPostForm_inner']//div[@class='blog-post-form-text']
 ${announcement_receive_text_locator}    //div[@class='sidebar-widget sidebar-imp-messages']//a[text()='{text}']
 ${search_input_locator}    //input[@class='header-search-input']
-
-    
+${sort_popup_locator}    //div[@class='search-title-top-result']
+${type_sort_locator}    //div[@class='search-title-top-result']//span[text()='{type_sort}']
+${action_post_menu_locator}    //div[@class='feed-post-right-top-menu']
+${action_post_locator}    //span[text()='{action_post}']
+${comment_locator}    //div[@class='feed-com-add']
+${comment_button_locator}    (//button[text()='Send'])[2]
+${like_locator}    //span[@class='feed-inform-item bx-ilike-left-wrap']

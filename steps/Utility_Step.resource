@@ -6,9 +6,10 @@ Library    String
 Library    Collections
 Library    RequestsLibrary
 Resource    ../locators/Login_Page.resource
-Resource    ../locators/Home_Page.resource
+Resource    ../locators/Feed_Page.resource
 Resource    ../environment/Environment.resource
-Resource    ../steps/Home_Step.resource
+Resource    ../steps/Feed_Step.resource
+Resource    ../locators/Chat_And_Call_Page.resource
 Library    ../libraries/CustomExcelLibrary.py
 
 *** Keywords ***
@@ -18,7 +19,7 @@ Create driver
         Call Method  ${options}  add_argument  --disable-infobars
         Call Method  ${options}  add_argument  --disable-extensions
         Call Method  ${options}  add_argument  --no-sandbox
-        # Call Method  ${options}  add_argument  --headless
+        Call Method  ${options}  add_argument  --headless
         Call Method  ${options}  add_argument  --disable-dev-shm-usage
         Call Method  ${options}  add_argument  --start-maximized
     Create Webdriver    Chrome    options=${options}
@@ -50,6 +51,23 @@ Log out
     Click Element    ${profile_locator}
     Click Element    ${logout_locator}
 
+Admin log out
+    Click Element    ${admin_logout_locator}
+
+Navigate to create channel page
+    Wait Until Element Is Visible    ${channel_menu_locator}    10s
+    Click Element    ${channel_menu_locator}
+    Wait Until Element Is Visible    ${channel_locator}    10s
+    Click Element    ${channel_locator}    
+    Wait Until Element Is Visible    ${create_channel_locator}    10s
+    Click Element    ${create_channel_locator}
+
+Navigate to list channel    
+    Wait Until Element Is Visible    ${channel_menu_locator}    10s
+    Click Element    ${channel_menu_locator}
+    Wait Until Element Is Visible    ${channel_locator}    10s
+    Click Element    ${channel_locator}       
+
 Navigate to create event page
     Click Element    ${calendar}
     Click Element    ${create_event}
@@ -59,15 +77,35 @@ Navigate to create message page
     Click Element    ${message_locator}
 
 Navigate to create announcement page
+    Wait Until Element Is Visible    ${more_post_locator}    10s
     Click Element    ${more_post_locator}
+    Wait Until Element Is Visible    ${announcement_locator}    10s
     Click Element    ${announcement_locator}
 
-Create announcement to all employees
-    Create driver
-    Login to intranet with uid    uid_1
-    Navigate to create announcement page
-    Send Message To User    All employees
-    Log out
+
+# Click Element Safely
+#     [Arguments]    ${locator}    ${timeout}=10
+#     [Documentation]    Safely clicks an element by scrolling it into view and using JavaScript if needed
+#     ...    locator: The element locator
+#     ...    timeout: Maximum time to wait for element
+#     Wait Until Element Is Visible    ${locator}    ${timeout}
+#     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+#     Sleep    1
+#     Execute JavaScript    document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView({block: 'center', behavior: 'smooth'})
+#     Sleep    2
+#     ${status}    ${value}=    Run Keyword And Ignore Error    Click Element    ${locator}
+#     Run Keyword If    '${status}' == 'FAIL'    
+#     ...    Execute JavaScript    document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()
+#     Sleep    1
+
+# Scroll Element Into View
+#     [Arguments]    ${locator}    ${timeout}=10
+#     [Documentation]    Scrolls an element into view
+#     ...    locator: The element locator
+#     ...    timeout: Maximum time to wait for element
+#     Wait Until Element Is Visible    ${locator}    ${timeout}
+#     Execute JavaScript    document.evaluate('${locator}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.scrollIntoView({block: 'center'})
+#     Sleep    1
 
 # Select User From Dropdown
 #     [Arguments]    ${dropdown_locator}    ${user_name}    ${timeout}=10
