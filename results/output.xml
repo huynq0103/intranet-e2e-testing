@@ -1,296 +1,383 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.6 on darwin)" generated="2025-05-16T16:47:31.887859" rpa="false" schemaversion="5">
-<suite id="s1" name="Chat And Call" source="/Users/huynq/testing/intranet-e2e-testing/tests/chat_and_call">
-<suite id="s1-s1" name="Public Channel Suite" source="/Users/huynq/testing/intranet-e2e-testing/tests/chat_and_call/Public_Channel_Suite.robot">
-<kw name="Create Channel With User" owner="Chat_And_Call_Step" type="SETUP">
+<robot generator="Robot 7.1 (Python 3.12.6 on darwin)" generated="2025-05-20T17:14:25.574736" rpa="false" schemaversion="5">
+<suite id="s1" name="Private Channel Suite" source="/Users/huynq/testing/intranet-e2e-testing/tests/chat_and_call/Private_Channel_Suite.robot">
+<kw name="Create Channel With Type And Member" owner="Chat_And_Call_Step" type="SETUP">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Create Channel" owner="Chat_And_Call_Step">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Admin Create Channel" owner="Chat_And_Call_Step">
 <kw name="Create driver" owner="Utility_Step">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-16T16:47:32.113730" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x10723a5a0&gt;</msg>
+<msg time="2025-05-20T17:14:25.948098" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1053210d0&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-16T16:47:32.113582" elapsed="0.000167"/>
+<status status="PASS" start="2025-05-20T17:14:25.947980" elapsed="0.000137"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-notifications</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-16T16:47:32.113826" elapsed="0.000061"/>
+<status status="PASS" start="2025-05-20T17:14:25.948236" elapsed="0.000088"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-infobars</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-16T16:47:32.113945" elapsed="0.000047"/>
+<status status="PASS" start="2025-05-20T17:14:25.948450" elapsed="0.000063"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-extensions</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-16T16:47:32.114040" elapsed="0.000042"/>
+<status status="PASS" start="2025-05-20T17:14:25.948571" elapsed="0.000053"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--no-sandbox</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-16T16:47:32.114130" elapsed="0.000045"/>
+<status status="PASS" start="2025-05-20T17:14:25.948675" elapsed="0.000047"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--headless</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-16T16:47:32.114221" elapsed="0.000040"/>
+<status status="PASS" start="2025-05-20T17:14:25.948771" elapsed="0.000048"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-dev-shm-usage</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-16T16:47:32.114305" elapsed="0.000040"/>
+<status status="PASS" start="2025-05-20T17:14:25.948866" elapsed="0.000043"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
 <arg>add_argument</arg>
 <arg>--start-maximized</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-16T16:47:32.114390" elapsed="0.000042"/>
+<status status="PASS" start="2025-05-20T17:14:25.948955" elapsed="0.000042"/>
 </kw>
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:32.114562" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2025-05-20T17:14:25.949138" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <arg>options=${options}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-05-16T16:47:32.114486" elapsed="0.710425"/>
+<status status="PASS" start="2025-05-20T17:14:25.949054" elapsed="0.904737"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-16T16:47:32.829803" elapsed="0.013427"/>
-</kw>
-<status status="PASS" start="2025-05-16T16:47:32.113147" elapsed="0.730237"/>
+<status status="PASS" start="2025-05-20T17:14:25.947908" elapsed="0.906304"/>
 </kw>
 <kw name="Login to intranet with uid" owner="Utility_Step">
+<kw name="Create driver" owner="Utility_Step">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T17:14:26.859814" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x105323410&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T17:14:26.859465" elapsed="0.000376"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:26.859944" elapsed="0.000288"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:26.860330" elapsed="0.000116"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:26.860585" elapsed="0.000081"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:26.860726" elapsed="0.000062"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:26.860840" elapsed="0.000105"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:26.861049" elapsed="0.000075"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:26.861184" elapsed="0.000052"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:14:26.861430" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-20T17:14:26.861312" elapsed="0.481730"/>
+</kw>
+<status status="PASS" start="2025-05-20T17:14:26.859174" elapsed="0.484218"/>
+</kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:32.843906" level="INFO">Opening url 'https://intranet-staging-cr.younetco.com'</msg>
+<msg time="2025-05-20T17:14:27.344320" level="INFO">Opening url 'https://intranet-staging-cr.younetco.com'</msg>
 <arg>${BASE_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-05-16T16:47:32.843764" elapsed="0.110688"/>
+<status status="PASS" start="2025-05-20T17:14:27.343852" elapsed="0.223669"/>
 </kw>
 <kw name="Join Path" owner="OperatingSystem">
-<msg time="2025-05-16T16:47:32.969455" level="INFO">${data_path} = /Users/huynq/testing/intranet-e2e-testing/data/data.xlsx</msg>
+<msg time="2025-05-20T17:14:27.567833" level="INFO">${data_path} = /Users/huynq/testing/intranet-e2e-testing/data/data.xlsx</msg>
 <var>${data_path}</var>
 <arg>/Users/huynq/testing/intranet-e2e-testing/steps</arg>
 <arg>../data/data.xlsx</arg>
 <doc>Joins the given path part(s) to the given base path.</doc>
-<status status="PASS" start="2025-05-16T16:47:32.954961" elapsed="0.014526"/>
+<status status="PASS" start="2025-05-20T17:14:27.567677" elapsed="0.000174"/>
 </kw>
 <kw name="Get Account By Uid" owner="CustomExcelLibrary">
-<msg time="2025-05-16T16:47:33.005191" level="INFO">${account} = ['uid_1', 'admin', 'tutna2', 'def@456']</msg>
+<msg time="2025-05-20T17:14:27.580139" level="INFO">${account} = ['uid_1', 'admin', 'tutna2', 'def@456']</msg>
 <var>${account}</var>
 <arg>${data_path}</arg>
 <arg>${uid}</arg>
-<status status="PASS" start="2025-05-16T16:47:32.969614" elapsed="0.035648"/>
+<status status="PASS" start="2025-05-20T17:14:27.567912" elapsed="0.012255"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2025-05-16T16:47:33.005699" level="INFO">${username} = tutna2</msg>
+<msg time="2025-05-20T17:14:27.580413" level="INFO">${username} = tutna2</msg>
 <var>${username}</var>
 <arg>${account}</arg>
 <arg>2</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-05-16T16:47:33.005559" elapsed="0.000622"/>
+<status status="PASS" start="2025-05-20T17:14:27.580294" elapsed="0.000130"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2025-05-16T16:47:33.007101" level="INFO">${password} = def@456</msg>
+<msg time="2025-05-20T17:14:27.580544" level="INFO">${password} = def@456</msg>
 <var>${password}</var>
 <arg>${account}</arg>
 <arg>3</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-05-16T16:47:33.006942" elapsed="0.000176"/>
+<status status="PASS" start="2025-05-20T17:14:27.580485" elapsed="0.000068"/>
 </kw>
 <kw name="Login with username and password" owner="Utility_Step">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:33.010337" level="INFO">Typing text 'tutna2' into text field '//input[@name='USER_LOGIN']'.</msg>
+<msg time="2025-05-20T17:14:27.581052" level="INFO">Typing text 'tutna2' into text field '//input[@name='USER_LOGIN']'.</msg>
 <arg>${user_name_selector}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:33.009543" elapsed="0.148955"/>
+<status status="PASS" start="2025-05-20T17:14:27.580825" elapsed="0.090227"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-16T16:47:34.159435" level="INFO">Slept 1 second.</msg>
+<msg time="2025-05-20T17:14:28.673344" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-16T16:47:33.158657" elapsed="1.000967"/>
+<status status="PASS" start="2025-05-20T17:14:27.671180" elapsed="1.002326"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:34.160486" level="INFO">Typing text 'def@456' into text field '//input[@name='USER_PASSWORD']'.</msg>
+<msg time="2025-05-20T17:14:28.674367" level="INFO">Typing text 'def@456' into text field '//input[@name='USER_PASSWORD']'.</msg>
 <arg>${password_selector}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:34.160018" elapsed="0.074804"/>
+<status status="PASS" start="2025-05-20T17:14:28.673880" elapsed="0.091817"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-16T16:47:35.235594" level="INFO">Slept 1 second.</msg>
+<msg time="2025-05-20T17:14:29.767770" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-16T16:47:34.234963" elapsed="1.000822"/>
+<status status="PASS" start="2025-05-20T17:14:28.765828" elapsed="1.002226"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:35.236624" level="INFO">Clicking button '//input[@type='submit']'.</msg>
+<msg time="2025-05-20T17:14:29.769105" level="INFO">Clicking button '//input[@type='submit']'.</msg>
 <arg>${submit_button_selector}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:35.236207" elapsed="0.041887"/>
+<status status="PASS" start="2025-05-20T17:14:29.768569" elapsed="0.043181"/>
 </kw>
 <arg>${username}</arg>
 <arg>${password}</arg>
-<status status="PASS" start="2025-05-16T16:47:33.008606" elapsed="2.269565"/>
+<status status="PASS" start="2025-05-20T17:14:27.580687" elapsed="2.231137"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-16T16:47:37.279061" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-05-20T17:14:31.812311" level="INFO">Slept 2 seconds.</msg>
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-16T16:47:35.278268" elapsed="2.001030"/>
+<status status="PASS" start="2025-05-20T17:14:29.811922" elapsed="2.000711"/>
 </kw>
 <arg>uid_1</arg>
-<status status="PASS" start="2025-05-16T16:47:32.843555" elapsed="4.435979"/>
+<status status="PASS" start="2025-05-20T17:14:26.854494" elapsed="4.958519"/>
 </kw>
 <kw name="Navigate to create channel page" owner="Utility_Step">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${channel_menu_locator}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T16:47:37.280612" elapsed="0.585769"/>
+<status status="PASS" start="2025-05-20T17:14:31.823067" elapsed="0.255000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:37.866645" level="INFO">Clicking element '//div[@title='View Open Channel chat']'.</msg>
+<msg time="2025-05-20T17:14:32.078331" level="INFO">Clicking element '//div[@title='View Open Channel chat']'.</msg>
 <arg>${channel_menu_locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:37.866517" elapsed="0.050868"/>
+<status status="PASS" start="2025-05-20T17:14:32.078203" elapsed="0.057011"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${channel_locator}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T16:47:37.917744" elapsed="0.664993"/>
+<status status="PASS" start="2025-05-20T17:14:32.135402" elapsed="0.940836"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:38.583021" level="INFO">Clicking element '//div[@title='Channels']'.</msg>
+<msg time="2025-05-20T17:14:33.078344" level="INFO">Clicking element '//div[@title='Channels']'.</msg>
 <arg>${channel_locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:38.582878" elapsed="0.034000"/>
+<status status="PASS" start="2025-05-20T17:14:33.077800" elapsed="0.037155"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${create_channel_locator}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T16:47:38.617015" elapsed="0.014456"/>
+<status status="PASS" start="2025-05-20T17:14:33.115102" elapsed="0.012095"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:38.631791" level="INFO">Clicking element '//div[@class='bx-im-list-container-channel__header_create-channel']'.</msg>
+<msg time="2025-05-20T17:14:33.127461" level="INFO">Clicking element '//div[@class='bx-im-list-container-channel__header_create-channel']'.</msg>
 <arg>${create_channel_locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:38.631635" elapsed="0.060201"/>
+<status status="PASS" start="2025-05-20T17:14:33.127329" elapsed="0.061966"/>
 </kw>
-<status status="PASS" start="2025-05-16T16:47:37.280032" elapsed="1.411896"/>
+<status status="PASS" start="2025-05-20T17:14:31.822623" elapsed="1.366980"/>
+</kw>
+<arg>${channel_type}</arg>
+<arg>${user_name}</arg>
+<status status="PASS" start="2025-05-20T17:14:25.947793" elapsed="7.241855"/>
+</kw>
+<arg>'${creator}' == 'uid_1'</arg>
+<arg>Admin Create Channel</arg>
+<arg>${channel_type}</arg>
+<arg>${user_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:14:25.947665" elapsed="7.242352"/>
 </kw>
 <kw name="Get Random String" owner="DateTimeLibrary">
-<msg time="2025-05-16T16:47:38.692307" level="INFO">${text_random} = IWX4NjaK6AHNaqqS1aLu</msg>
+<msg time="2025-05-20T17:14:33.190852" level="INFO">${text_random} = 0RQex8KcQvnRHeKUg4Ke</msg>
 <var>${text_random}</var>
 <doc>Generate a random string of specified length using letters and digits.</doc>
-<status status="PASS" start="2025-05-16T16:47:38.692033" elapsed="0.000295"/>
+<status status="PASS" start="2025-05-20T17:14:33.190383" elapsed="0.000488"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-05-16T16:47:38.693262" level="INFO">${channel_name} = IWX4NjaK6AHNaqqS1aLu</msg>
+<msg time="2025-05-20T17:14:33.191855" level="INFO">${channel_name} = 0RQex8KcQvnRHeKUg4Ke</msg>
 <arg>${channel_name}</arg>
 <arg>${text_random}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-05-16T16:47:38.692435" elapsed="0.000864"/>
+<status status="PASS" start="2025-05-20T17:14:33.190999" elapsed="0.000887"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:38.693538" level="INFO">Typing text 'IWX4NjaK6AHNaqqS1aLu' into text field '//input[@placeholder='Channel name']'.</msg>
+<msg time="2025-05-20T17:14:33.192095" level="INFO">Typing text '0RQex8KcQvnRHeKUg4Ke' into text field '//input[@placeholder='Channel name']'.</msg>
 <arg>${channel_name_locator}</arg>
 <arg>${channel_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:38.693410" elapsed="0.076805"/>
+<status status="PASS" start="2025-05-20T17:14:33.191976" elapsed="0.077474"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-16T16:47:39.771359" level="INFO">Slept 1 second.</msg>
+<msg time="2025-05-20T17:14:34.271063" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-16T16:47:38.770340" elapsed="1.001175"/>
+<status status="PASS" start="2025-05-20T17:14:33.269901" elapsed="1.001275"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:39.772142" level="INFO">Typing text 'IWX4NjaK6AHNaqqS1aLu' into text field '//textarea[@placeholder='Enter channel description']'.</msg>
+<msg time="2025-05-20T17:14:34.272648" level="INFO">Typing text '0RQex8KcQvnRHeKUg4Ke' into text field '//textarea[@placeholder='Enter channel description']'.</msg>
 <arg>${channel_description_locator}</arg>
 <arg>${text_random}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:39.771814" elapsed="0.044059"/>
+<status status="PASS" start="2025-05-20T17:14:34.272069" elapsed="0.071260"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-16T16:47:40.817563" level="INFO">Slept 1 second.</msg>
+<msg time="2025-05-20T17:14:35.343980" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-16T16:47:39.815997" elapsed="1.001735"/>
+<status status="PASS" start="2025-05-20T17:14:34.343455" elapsed="1.000664"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-05-20T17:14:35.344816" level="INFO">${channel_type_locator} = //div[text()='Private']</msg>
+<var>${channel_type_locator}</var>
+<arg>${channel_type_locator}</arg>
+<arg>{channel_type}</arg>
+<arg>${channel_type}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-05-20T17:14:35.344424" elapsed="0.000424"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:40.818425" level="INFO">Clicking element '//div[text()='Public']'.</msg>
+<msg time="2025-05-20T17:14:35.345246" level="INFO">Clicking element '//div[text()='Private']'.</msg>
 <arg>${channel_type_locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:40.818070" elapsed="0.044157"/>
+<status status="PASS" start="2025-05-20T17:14:35.345026" elapsed="0.048262"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-16T16:47:41.863644" level="INFO">Slept 1 second.</msg>
+<msg time="2025-05-20T17:14:36.395813" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-16T16:47:40.862345" elapsed="1.001452"/>
+<status status="PASS" start="2025-05-20T17:14:35.393427" elapsed="1.002463"/>
 </kw>
+<kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Select User From Dropdown" owner="Feed_Step">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${dropdown_locator}</arg>
 <arg>${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T16:47:41.864618" elapsed="0.017235"/>
+<status status="PASS" start="2025-05-20T17:14:36.396517" elapsed="0.012277"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:41.882118" level="INFO">Clicking element '(//span[@class='ui-tag-selector-add-button-caption'])[3]'.</msg>
+<msg time="2025-05-20T17:14:36.409052" level="INFO">Clicking element '(//span[@class='ui-tag-selector-add-button-caption'])[3]'.</msg>
 <arg>${dropdown_locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:41.881990" elapsed="0.048441"/>
+<status status="PASS" start="2025-05-20T17:14:36.408925" elapsed="0.050205"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-16T16:47:42.933112" level="INFO">Slept 1 second.</msg>
+<msg time="2025-05-20T17:14:37.459710" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-16T16:47:41.930845" elapsed="1.002336"/>
+<status status="PASS" start="2025-05-20T17:14:36.459275" elapsed="1.000506"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-05-16T16:47:42.933416" level="INFO">${user_option} = xpath://div[contains(@class, 'popup-window')]//div[contains(@class, 'popup-window-content')]//div[contains(text(), 'tutna HR')]</msg>
+<msg time="2025-05-20T17:14:37.460091" level="INFO">${user_option} = xpath://div[contains(@class, 'popup-window')]//div[contains(@class, 'popup-window-content')]//div[contains(text(), 'tutna HR')]</msg>
 <var>${user_option}</var>
 <arg>xpath://div[contains(@class, 'popup-window')]//div[contains(@class, 'popup-window-content')]//div[contains(text(), '${user_name}')]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-05-16T16:47:42.933303" elapsed="0.000125"/>
+<status status="PASS" start="2025-05-20T17:14:37.459958" elapsed="0.000149"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${user_option}</arg>
 <arg>${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T16:47:42.933495" elapsed="0.014055"/>
+<status status="PASS" start="2025-05-20T17:14:37.460177" elapsed="0.012968"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:42.947801" level="INFO">Clicking element 'xpath://div[contains(@class, 'popup-window')]//div[contains(@class, 'popup-window-content')]//div[contains(text(), 'tutna HR')]'.</msg>
+<msg time="2025-05-20T17:14:37.473899" level="INFO">Clicking element 'xpath://div[contains(@class, 'popup-window')]//div[contains(@class, 'popup-window-content')]//div[contains(text(), 'tutna HR')]'.</msg>
 <arg>${user_option}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:42.947677" elapsed="0.038876"/>
+<status status="PASS" start="2025-05-20T17:14:37.473648" elapsed="0.040928"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-16T16:47:43.988719" level="INFO">Slept 1 second.</msg>
+<msg time="2025-05-20T17:14:38.517908" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-16T16:47:42.986679" elapsed="1.002112"/>
+<status status="PASS" start="2025-05-20T17:14:37.514824" elapsed="1.003697"/>
 </kw>
 <arg>${tag_user_channel_locator}</arg>
 <arg>${user_name}</arg>
@@ -298,174 +385,413 @@
 dropdown_locator: The locator of the dropdown element
 user_name: The name of the user to select
 timeout: Maximum time to wait for elements</doc>
-<status status="PASS" start="2025-05-16T16:47:41.864143" elapsed="2.124710"/>
+<status status="PASS" start="2025-05-20T17:14:36.396321" elapsed="2.122489"/>
+</kw>
+<arg>'${user_name}' != 'None'</arg>
+<arg>Select User From Dropdown</arg>
+<arg>${tag_user_channel_locator}</arg>
+<arg>${user_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T17:14:36.396034" elapsed="2.122847"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:43.989095" level="INFO">Clicking element '//button/span[text()='Create channel']'.</msg>
+<msg time="2025-05-20T17:14:38.519732" level="INFO">Clicking element '//button/span[text()='Create channel']'.</msg>
 <arg>${create_channel_button_locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:43.988963" elapsed="0.031939"/>
+<status status="PASS" start="2025-05-20T17:14:38.519271" elapsed="0.072628"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-16T16:47:46.021337" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-05-20T17:14:40.593317" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-16T16:47:44.021036" elapsed="2.000541"/>
+<status status="PASS" start="2025-05-20T17:14:38.592159" elapsed="2.001248"/>
 </kw>
-<kw name="Admin log out" owner="Utility_Step">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:46.023960" level="INFO">Clicking element '//a[@id='bx-panel-logout']'.</msg>
-<arg>${admin_logout_locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:46.023568" elapsed="1.926916"/>
+<arg>${creator}</arg>
+<arg>${channel_type}</arg>
+<arg>${user_name}</arg>
+<status status="PASS" start="2025-05-20T17:14:25.947531" elapsed="14.645940"/>
 </kw>
-<status status="PASS" start="2025-05-16T16:47:46.022087" elapsed="1.928853"/>
+<arg>${retry_count}x</arg>
+<arg>${retry_interval}</arg>
+<arg>Create Channel</arg>
+<arg>${creator}</arg>
+<arg>${channel_type}</arg>
+<arg>${user_name}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-20T17:14:25.947360" elapsed="14.646156"/>
 </kw>
-<arg>tutna HR</arg>
-<status status="PASS" start="2025-05-16T16:47:32.112985" elapsed="15.838008"/>
+<arg>uid_1</arg>
+<arg>Private</arg>
+<arg>${user_03}</arg>
+<doc>Retries the Create Channel With Type And User keyword if it fails
+channel_type: Type of channel to create
+user_name: Name of user to add to channel
+retry_count: Number of retry attempts
+retry_interval: Time to wait between retries</doc>
+<status status="PASS" start="2025-05-20T17:14:25.946842" elapsed="14.646721"/>
 </kw>
-<test id="s1-s1-t1" name="TC21" line="12">
+<test id="s1-t1" name="TC26" line="29">
+<kw name="Close Browser And Clean Session" owner="Utility_Step">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-05-20T17:14:40.594461" elapsed="0.238693"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-20T17:14:41.835295" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-20T17:14:40.833275" elapsed="1.002222"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:14:41.837363" level="INFO">Executing JavaScript:
+window.localStorage.clear()
+Without any arguments.</msg>
+<msg time="2025-05-20T17:14:41.837588" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-05-20T17:14:41.839896" level="FAIL">No browser is open.</msg>
+<arg>window.localStorage.clear()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="FAIL" start="2025-05-20T17:14:41.836239" elapsed="0.006787">No browser is open.</status>
+</kw>
+<msg time="2025-05-20T17:14:41.843142" level="INFO">${status} = FAIL</msg>
+<msg time="2025-05-20T17:14:41.843164" level="INFO">${value} = No browser is open.</msg>
+<var>${status}</var>
+<var>${value}</var>
+<arg>Execute JavaScript</arg>
+<arg>window.localStorage.clear()</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-05-20T17:14:41.835882" elapsed="0.007293"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:14:41.843553" level="INFO">Executing JavaScript:
+window.sessionStorage.clear()
+Without any arguments.</msg>
+<msg time="2025-05-20T17:14:41.843576" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-05-20T17:14:41.843614" level="FAIL">No browser is open.</msg>
+<arg>window.sessionStorage.clear()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="FAIL" start="2025-05-20T17:14:41.843372" elapsed="0.000391">No browser is open.</status>
+</kw>
+<msg time="2025-05-20T17:14:41.843812" level="INFO">${status} = FAIL</msg>
+<msg time="2025-05-20T17:14:41.843828" level="INFO">${value} = No browser is open.</msg>
+<var>${status}</var>
+<var>${value}</var>
+<arg>Execute JavaScript</arg>
+<arg>window.sessionStorage.clear()</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-05-20T17:14:41.843277" elapsed="0.000559"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-20T17:14:42.845698" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-20T17:14:41.843891" elapsed="1.001980"/>
+</kw>
+<doc>Closes browser and cleans up session</doc>
+<status status="PASS" start="2025-05-20T17:14:40.594297" elapsed="2.251723"/>
+</kw>
 <kw name="Login to intranet with uid" owner="Utility_Step">
+<kw name="Create driver" owner="Utility_Step">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-20T17:14:42.847791" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x10539ad80&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-20T17:14:42.847253" elapsed="0.000562"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:42.847913" elapsed="0.000076"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:42.848048" elapsed="0.000061"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:42.848228" elapsed="0.000055"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:42.848334" elapsed="0.000046"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:42.848428" elapsed="0.000045"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:42.848522" elapsed="0.000045"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-05-20T17:14:42.848613" elapsed="0.000044"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:14:42.848808" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-20T17:14:42.848717" elapsed="0.545682"/>
+</kw>
+<status status="PASS" start="2025-05-20T17:14:42.846940" elapsed="0.547983"/>
+</kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:47.952548" level="INFO">Opening url 'https://intranet-staging-cr.younetco.com'</msg>
+<msg time="2025-05-20T17:14:43.396434" level="INFO">Opening url 'https://intranet-staging-cr.younetco.com'</msg>
 <arg>${BASE_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-05-16T16:47:47.952383" elapsed="0.432106"/>
+<status status="PASS" start="2025-05-20T17:14:43.395756" elapsed="0.190175"/>
 </kw>
 <kw name="Join Path" owner="OperatingSystem">
-<msg time="2025-05-16T16:47:48.385132" level="INFO">${data_path} = /Users/huynq/testing/intranet-e2e-testing/data/data.xlsx</msg>
+<msg time="2025-05-20T17:14:43.586692" level="INFO">${data_path} = /Users/huynq/testing/intranet-e2e-testing/data/data.xlsx</msg>
 <var>${data_path}</var>
 <arg>/Users/huynq/testing/intranet-e2e-testing/steps</arg>
 <arg>../data/data.xlsx</arg>
 <doc>Joins the given path part(s) to the given base path.</doc>
-<status status="PASS" start="2025-05-16T16:47:48.384942" elapsed="0.000207"/>
+<status status="PASS" start="2025-05-20T17:14:43.586223" elapsed="0.000494"/>
 </kw>
 <kw name="Get Account By Uid" owner="CustomExcelLibrary">
-<msg time="2025-05-16T16:47:48.395118" level="INFO">${account} = ['uid_2', 'hr', 'tutna4', 'def@456']</msg>
+<msg time="2025-05-20T17:14:43.598488" level="INFO">${account} = ['uid_1', 'admin', 'tutna2', 'def@456']</msg>
 <var>${account}</var>
 <arg>${data_path}</arg>
 <arg>${uid}</arg>
-<status status="PASS" start="2025-05-16T16:47:48.385223" elapsed="0.009921"/>
+<status status="PASS" start="2025-05-20T17:14:43.586921" elapsed="0.011592"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2025-05-16T16:47:48.395441" level="INFO">${username} = tutna4</msg>
+<msg time="2025-05-20T17:14:43.598735" level="INFO">${username} = tutna2</msg>
 <var>${username}</var>
 <arg>${account}</arg>
 <arg>2</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-05-16T16:47:48.395320" elapsed="0.000135"/>
+<status status="PASS" start="2025-05-20T17:14:43.598628" elapsed="0.000118"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2025-05-16T16:47:48.395587" level="INFO">${password} = def@456</msg>
+<msg time="2025-05-20T17:14:43.598863" level="INFO">${password} = def@456</msg>
 <var>${password}</var>
 <arg>${account}</arg>
 <arg>3</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-05-16T16:47:48.395521" elapsed="0.000077"/>
+<status status="PASS" start="2025-05-20T17:14:43.598804" elapsed="0.000069"/>
 </kw>
 <kw name="Login with username and password" owner="Utility_Step">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:48.395973" level="INFO">Typing text 'tutna4' into text field '//input[@name='USER_LOGIN']'.</msg>
+<msg time="2025-05-20T17:14:43.599386" level="INFO">Typing text 'tutna2' into text field '//input[@name='USER_LOGIN']'.</msg>
 <arg>${user_name_selector}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:48.395826" elapsed="0.034482"/>
+<status status="PASS" start="2025-05-20T17:14:43.599224" elapsed="0.098864"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-16T16:47:49.431813" level="INFO">Slept 1 second.</msg>
+<msg time="2025-05-20T17:14:44.699004" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-16T16:47:48.430438" elapsed="1.001616"/>
+<status status="PASS" start="2025-05-20T17:14:43.698269" elapsed="1.000936"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:49.433131" level="INFO">Typing text 'def@456' into text field '//input[@name='USER_PASSWORD']'.</msg>
+<msg time="2025-05-20T17:14:44.700036" level="INFO">Typing text 'def@456' into text field '//input[@name='USER_PASSWORD']'.</msg>
 <arg>${password_selector}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:49.432543" elapsed="0.039296"/>
+<status status="PASS" start="2025-05-20T17:14:44.699582" elapsed="0.103219"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-16T16:47:50.472414" level="INFO">Slept 1 second.</msg>
+<msg time="2025-05-20T17:14:45.803527" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-16T16:47:49.472006" elapsed="1.000634"/>
+<status status="PASS" start="2025-05-20T17:14:44.802930" elapsed="1.000801"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:50.473376" level="INFO">Clicking button '//input[@type='submit']'.</msg>
+<msg time="2025-05-20T17:14:45.804653" level="INFO">Clicking button '//input[@type='submit']'.</msg>
 <arg>${submit_button_selector}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:50.473032" elapsed="3.448014"/>
+<status status="PASS" start="2025-05-20T17:14:45.804063" elapsed="0.045033"/>
 </kw>
 <arg>${username}</arg>
 <arg>${password}</arg>
-<status status="PASS" start="2025-05-16T16:47:48.395679" elapsed="5.525521"/>
+<status status="PASS" start="2025-05-20T17:14:43.598972" elapsed="2.250208"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-16T16:47:55.925830" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-05-20T17:14:47.849560" level="INFO">Slept 2 seconds.</msg>
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-16T16:47:53.921426" elapsed="2.004717"/>
+<status status="PASS" start="2025-05-20T17:14:45.849286" elapsed="2.000439"/>
 </kw>
-<arg>uid_2</arg>
-<status status="PASS" start="2025-05-16T16:47:47.952103" elapsed="7.974243"/>
+<arg>uid_1</arg>
+<status status="PASS" start="2025-05-20T17:14:42.846458" elapsed="5.003450"/>
 </kw>
+<kw name="Navigate To Channel Detail" owner="Chat_And_Call_Step">
 <kw name="Navigate to list channel" owner="Utility_Step">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${channel_menu_locator}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T16:47:55.927362" elapsed="0.014024"/>
+<status status="PASS" start="2025-05-20T17:14:47.851372" elapsed="0.714348"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:55.942133" level="INFO">Clicking element '//div[@title='View Open Channel chat']'.</msg>
+<msg time="2025-05-20T17:14:48.565982" level="INFO">Clicking element '//div[@title='View Open Channel chat']'.</msg>
 <arg>${channel_menu_locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:55.941803" elapsed="0.041971"/>
+<status status="PASS" start="2025-05-20T17:14:48.565853" elapsed="0.052592"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${channel_locator}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T16:47:55.983998" elapsed="0.462341"/>
+<status status="PASS" start="2025-05-20T17:14:48.619128" elapsed="0.657502"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-16T16:47:56.446584" level="INFO">Clicking element '//div[@title='Channels']'.</msg>
+<msg time="2025-05-20T17:14:49.277110" level="INFO">Clicking element '//div[@title='Channels']'.</msg>
 <arg>${channel_locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-16T16:47:56.446464" elapsed="0.033426"/>
+<status status="PASS" start="2025-05-20T17:14:49.276909" elapsed="0.056002"/>
 </kw>
-<status status="PASS" start="2025-05-16T16:47:55.926827" elapsed="0.553131"/>
+<status status="PASS" start="2025-05-20T17:14:47.851023" elapsed="1.481970"/>
 </kw>
-<kw name=" Check Channel Appear On List" owner="Chat_And_Call_Step">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${create_channel_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T17:14:49.333094" elapsed="0.012139"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:14:49.345563" level="INFO">Clicking element '//div[@class='bx-im-list-container-channel__header_create-channel']'.</msg>
+<arg>${create_channel_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:14:49.345384" elapsed="0.089304"/>
+</kw>
+<kw name="Search Channel" owner="Chat_And_Call_Step">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${search_channel_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T17:14:49.435010" elapsed="0.011289"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:14:49.446708" level="INFO">Typing text '0RQex8KcQvnRHeKUg4Ke' into text field '//input[@placeholder='Find employee or chat']'.</msg>
+<arg>${search_channel_locator}</arg>
+<arg>${channel_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:14:49.446535" elapsed="0.257233"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-20T17:14:50.705734" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-20T17:14:49.703910" elapsed="1.002063"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:14:50.707633" level="INFO">Sending key(s) ('ENTER',) to //input[@placeholder='Find employee or chat'] element.</msg>
+<msg time="2025-05-20T17:14:50.998541" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-05-20T17:14:50.998595" level="INFO">Releasing special key ENTER.</msg>
+<arg>${search_channel_locator}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-05-20T17:14:50.706503" elapsed="0.295194"/>
+</kw>
+<arg>${channel_name}</arg>
+<status status="PASS" start="2025-05-20T17:14:49.434834" elapsed="1.566938"/>
+</kw>
 <kw name="Replace String" owner="String">
-<msg time="2025-05-16T16:47:56.480392" level="INFO">${channel_title_locator} = //span[text()='IWX4NjaK6AHNaqqS1aLu']</msg>
+<msg time="2025-05-20T17:14:51.002002" level="INFO">${channel_title_locator} = //span[text()='0RQex8KcQvnRHeKUg4Ke']</msg>
 <var>${channel_title_locator}</var>
 <arg>${channel_title_locator}</arg>
 <arg>{channel_name}</arg>
 <arg>${channel_name}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="PASS" start="2025-05-16T16:47:56.480291" elapsed="0.000114"/>
+<status status="PASS" start="2025-05-20T17:14:51.001870" elapsed="0.000145"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:14:51.002162" level="INFO">Clicking element '//span[text()='0RQex8KcQvnRHeKUg4Ke']'.</msg>
 <arg>${channel_title_locator}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-16T16:47:56.480471" elapsed="0.853441"/>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:14:51.002080" elapsed="0.077444"/>
 </kw>
 <arg>${channel_name}</arg>
-<status status="PASS" start="2025-05-16T16:47:56.480096" elapsed="0.853886"/>
+<status status="PASS" start="2025-05-20T17:14:47.850500" elapsed="3.229094"/>
 </kw>
-<doc>Check that all stakeholders is added to the channel after creating</doc>
+<kw name="Delete Channel" owner="Chat_And_Call_Step">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${action_channel_detail_icon_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T17:14:51.079936" elapsed="1.291802"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:14:52.371996" level="INFO">Clicking element '//div[@class='bx-im-chat-header__icon --panel']'.</msg>
+<arg>${action_channel_detail_icon_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:14:52.371869" elapsed="0.041348"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${action_channel_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T17:14:52.413550" elapsed="0.223259"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:14:52.637083" level="INFO">Clicking element '//button[@class='bx-im-sidebar-header__context-menu-icon bx-im-messenger__context-menu-icon']'.</msg>
+<arg>${action_channel_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:14:52.636954" elapsed="0.046077"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${delete_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T17:14:52.683174" elapsed="0.245645"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:14:52.929100" level="INFO">Clicking element '//span[text()='Delete']'.</msg>
+<arg>${delete_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:14:52.928962" elapsed="0.064129"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${confirm_delete_locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T17:14:52.993431" elapsed="0.014042"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T17:14:53.007811" level="INFO">Clicking element '//button[./span[@class='ui-btn-text' and text()='Yes']]'.</msg>
+<arg>${confirm_delete_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T17:14:53.007657" elapsed="0.038153"/>
+</kw>
+<status status="PASS" start="2025-05-20T17:14:51.079762" elapsed="1.966121"/>
+</kw>
+<doc>Check that owner can delete the channel by clicking on the Delete option</doc>
 <tag>intranet_smoke_test</tag>
-<status status="PASS" start="2025-05-16T16:47:47.951246" elapsed="9.382857"/>
+<status status="PASS" start="2025-05-20T17:14:40.593737" elapsed="12.452306"/>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-16T16:47:57.334509" elapsed="0.156700"/>
+<status status="PASS" start="2025-05-20T17:14:53.046496" elapsed="0.153742"/>
 </kw>
-<status status="PASS" start="2025-05-16T16:47:31.903764" elapsed="25.587511"/>
-</suite>
-<status status="PASS" start="2025-05-16T16:47:31.888434" elapsed="25.603260"/>
+<status status="PASS" start="2025-05-20T17:14:25.575695" elapsed="27.624601"/>
 </suite>
 <statistics>
 <total>
@@ -475,8 +801,7 @@ timeout: Maximum time to wait for elements</doc>
 <stat pass="1" fail="0" skip="0">intranet_smoke_test</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Chat And Call">Chat And Call</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Public Channel Suite">Chat And Call.Public Channel Suite</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Private Channel Suite">Private Channel Suite</stat>
 </suite>
 </statistics>
 <errors>

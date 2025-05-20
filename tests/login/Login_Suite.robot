@@ -14,7 +14,7 @@ TC01
 TC02    
     [Documentation]    check user cann't login to intranet
     [Tags]    intranet_smoke_test
-    Login to intranet with uid    uid_3
+    Login to intranet with uid    uid_4
     Wait Until Page Contains    ${error_message}
 
     

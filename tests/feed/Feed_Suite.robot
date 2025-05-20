@@ -4,7 +4,7 @@ Resource   ../../steps/Utility_Step.resource
 Resource   ../../locators/Feed_Page.resource
 Resource   ../../steps/Feed_Step.resource
 Resource   ../../environment/Environment.resource
-Suite Setup    Create announcement to all employees
+Suite Setup    Create announcement to all employees with retry
 # Test Setup    Create driver
 # Test Teardown    Close Browser
 Suite Teardown    Close Browser

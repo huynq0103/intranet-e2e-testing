@@ -1,7 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ../../steps/Home_Step.resource
-Resource   ../../locators/Home_Page.resource
 Resource   ../../steps/Utility_Step.resource
 Test Setup    Create driver
 Test Teardown    Close Browser

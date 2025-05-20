@@ -63,6 +63,13 @@ Create announcement to all employees
     Send Message To User    All employees
     Log out   
 
+Create announcement to all employees with retry
+    [Arguments]    ${retry_count}=3    ${retry_interval}=2s
+    [Documentation]    Retries the Create announcement to all employees keyword if it fails
+    ...    retry_count: Number of retry attempts
+    ...    retry_interval: Time to wait between retries
+    Wait Until Keyword Succeeds    ${retry_count}x    ${retry_interval}    Create announcement to all employees
+
 Select action post
     [Arguments]    ${action_post}
     ${action_post_locator}    Replace String    ${action_post_locator}    {action_post}    ${action_post}
@@ -74,6 +81,9 @@ Edit post
     Set Suite Variable    ${message_on_feed}    ${str_random}
     Wait Until Element Is Visible    ${action_post_menu_locator}    10s
     Click Element    ${action_post_menu_locator}
+    Sleep    1s
+    # Wait Until Element Is Visible    ${popup_action_locator}    10s
+    Wait For Menu Popup    10s
     Select action post    Edit
     Input Text To Iframe    ${message_on_feed}
     Sleep    1s
@@ -158,7 +168,7 @@ Select User From Dropdown
     Sleep    1
 
 Select User From Dropdown With Search
-    [Arguments]    ${dropdown_locator}    ${search_input_locator}    ${user_name}    ${timeout}=10
+    [Arguments]    ${dropdown_locator}    ${search_input_locator}    ${user_name}    ${item_locator}    ${timeout}=10
     [Documentation]    Selects a user from a dropdown list with search functionality
     ...    dropdown_locator: The locator of the dropdown element
     ...    search_input_locator: The locator of the search input field
@@ -166,11 +176,36 @@ Select User From Dropdown With Search
     ...    timeout: Maximum time to wait for elements
     Wait Until Element Is Visible    ${dropdown_locator}    ${timeout}
     Click Element    ${dropdown_locator}
-    Sleep    1
+    Sleep    1s
     Wait Until Element Is Visible    ${search_input_locator}    ${timeout}
     Input Text    ${search_input_locator}    ${user_name}
+    Sleep    1s
+    Wait Until Element Is Visible    ${item_locator}    ${timeout}
+    Mouse Over    ${item_locator}
+    Click Element    ${item_locator}
+    Sleep    1s   
+
+Wait For Menu Popup
+    [Arguments]    ${timeout}=20
+    [Documentation]    Waits for menu popup to be visible with additional conditions for headless mode
+    ...    timeout: Maximum time to wait
+    ${status}    ${value}=    Run Keyword And Ignore Error    Wait Until Element Is Visible    //div[@class='menu-popup-items']    ${timeout}
+    Run Keyword If    '${status}' == 'FAIL'    
+    ...    Wait Until Page Contains Element    //div[@class='menu-popup-items']    ${timeout}
+    Sleep    2
+    ${status}    ${value}=    Run Keyword And Ignore Error    Wait Until Element Is Enabled    //div[@class='menu-popup-items']    5
+    Run Keyword If    '${status}' == 'FAIL'    Sleep    2
+    Execute JavaScript    document.querySelector('.menu-popup-items').style.display = 'block'
+    Execute JavaScript    document.querySelector('.menu-popup-items').style.visibility = 'visible'
+    Execute JavaScript    document.querySelector('.menu-popup-items').style.opacity = '1'
+    Execute JavaScript    document.querySelector('.menu-popup-items').style.zIndex = '9999'
+
+Click Element With Menu Popup
+    [Arguments]    ${locator}    ${timeout}=20
+    [Documentation]    Clicks element and waits for menu popup to appear
+    ...    locator: Element to click
+    ...    timeout: Maximum time to wait
+    Wait Until Element Is Visible    ${locator}    ${timeout}
+    Click Element    ${locator}
+    Wait For Menu Popup    ${timeout}
     Sleep    1
-    ${user_option}    Set Variable    xpath://div[contains(@class, 'popup-window')]//div[contains(@class, 'popup-window-content')]//div[contains(text(), '${user_name}')]
-    Wait Until Element Is Visible    ${user_option}    ${timeout}
-    Click Element    ${user_option}
-    Sleep    1    

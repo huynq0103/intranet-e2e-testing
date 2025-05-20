@@ -23,7 +23,7 @@ Create driver
         Call Method  ${options}  add_argument  --disable-dev-shm-usage
         Call Method  ${options}  add_argument  --start-maximized
     Create Webdriver    Chrome    options=${options}
-    Maximize Browser Window
+    # Maximize Browser Window
 
 Navigate to login page
     [Arguments]    ${url}
@@ -39,6 +39,7 @@ Login with username and password
           
 Login to intranet with uid
     [Arguments]    ${uid}
+    Create driver
     Go to    ${BASE_URL} 
     ${data_path}    Join Path    ${CURDIR}    ../data/data.xlsx
     ${account}    Get account by uid    ${data_path}    ${uid}
@@ -82,6 +83,19 @@ Navigate to create announcement page
     Wait Until Element Is Visible    ${announcement_locator}    10s
     Click Element    ${announcement_locator}
 
+Close Browser And Clean Session
+    [Documentation]    Closes browser and cleans up session
+    Close All Browsers
+    Sleep    1
+    ${status}    ${value}=    Run Keyword And Ignore Error    Execute JavaScript    window.localStorage.clear()
+    ${status}    ${value}=    Run Keyword And Ignore Error    Execute JavaScript    window.sessionStorage.clear()
+    Sleep    1
+
+Clean Session
+    [Documentation]    Cleans up session
+    ${status}    ${value}=    Run Keyword And Ignore Error    Execute JavaScript    window.localStorage.clear()
+    ${status}    ${value}=    Run Keyword And Ignore Error    Execute JavaScript    window.sessionStorage.clear()
+    Sleep    1s
 
 # Click Element Safely
 #     [Arguments]    ${locator}    ${timeout}=10
